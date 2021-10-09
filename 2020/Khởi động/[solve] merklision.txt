@@ -1,0 +1,138 @@
+Writeup merklision - Quals
+Version 2: 
+
+Tóm tắt đề bài:
+
+- Nhập số n
+
+- Sinh ra một mảng data có n phần tử
+
+- Dựng hash merkle tree:
+
++ Giả sử data = [a1,a2,a3,...,an]
+
++ Bước 1: hash tiền xử lí dữ liệu data = [hash(a1), hash(a2),...]
+
++ Bước 2: Bắt cặp 2 phần tử và hash để tạo ra mảng data mới, nếu lẻ thì nhân đôi phần tử cuối (*)
+
+Tính hash mới: data = [ hash(a1 + a2), hash(a3 + a4), ..., hash(a(2n-1) + a2n)]
+
++ Lặp lại bước 2 đến khi data còn 1 phần tử thì là hash cuối cùng
+
+Yêu cầu:
+
+Sinh ra 2020 mảng khác nhau sao cho có cùng hash với một mảng được cho trước (từ n tùy chọn)
+
+Ví dụ:
+
+Chọn n = 3
+
+Mảng data = [a,b,c]
+
+=> hash tiền xử lí: [h(a), h(b), h(c)]
+
+=> hash lần 1: [h(h(a) + h(b)), h(h(c) + h(c))] (nhân đôi phần tử cuối do 3 lẻ)
+
+=> hash lần 2: [h(h(h(a) + h(b)) + h(h(c) + h(c)))]
+
+=> Vậy hash cuối cùng là: h(h(h(a) + h(b)) + h(h(c) + h(c)))
+
+Nhận xét 1 (second preimage attack):
+
+Mảng [a,b,c,d] có cùng hash với mảng [h(a) + h(b), h(c) + h(d)]
+
+Thay vì gửi [a,b,c,d], thì mình có thể gửi [h(a) + h(b), h(c) + h(d)] => hash sơ bộ là [h(h(a) + h(b)), h(h(c) + h(d))]
+
+Khi đó hash tiền xử lí của mảng mới sẽ trùng với hash lần 1 của mảng gốc dẫn đến các hash sau đó cũng trùng
+
+Tương tự ta có thể tiếp tục áp dụng phương pháp này thêm lần nữa và gửi mảng [h(h(a) + h(b)) + h(h(c) + h(d))]
+
+Kết luận: từ 1 mảng n phần tử ta có thể tạo ra ceil(log2(n)) mảng nhỏ hơn từ mảng ban đầu 
+
+Nhận xét 2 (exploit bước (*)):
+
+Mảng [a, b, c] có cùng hash với [a,b,c,c]
+
+Nếu ta có 1 mảng data lẻ ví dụ data = [a, b, c], thì khi thực hiện hash phần tử c sẽ bị nhân đôi
+
+Nên mảng [a, b, c] và [a, b, c, c] cũng sẽ cho ra cùng một hash
+
+Nếu chỉ dừng ở đây thì ta vẫn không đủ để tạo ra 2020 mảng
+
+Ta sẽ phải nhận xét thêm một xíu, ta có thể exploit việc nhân đôi ở các bước tiếp theo
+
+Ví dụ như n = 5
+
+data = [a,b,c,d,e]
+
+hash tiền xử lí: [h(a),h(b),h(c),h(d),h(e)]
+
+hash lần 1: [h(h(a) + h(b)), h(h(b) + h(c)), h(h(e) + h(e))] (nhân đôi e)
+
+hash lần 2: [h(h(h(a) + h(b)) + h(h(b) + h(c))), h(h(h(e) + h(e)) + h(h(e) + h(e)))] (nhân đôi h(h(e) + h(e)))
+
+...
+
+Ta có thể thấy không những mảng [a,b,c,d,e] có cùng hash với [a,b,c,d,e,e] mà cũng cùng hash với [a,b,c,d,e,e,e] và [a,b,c,d,e,e,e,e]
+
+Cách exploit này làm việc tốt nhất khi ta chọn n có dạng 2^k + 1
+
+Khi đó giả sử, ta có mảng data [a1,a2,...an] sẽ có cùng hash với các mảng
+
+[a1,a2,...,an,an]
+
+[a1,a2,...,an,an,an]
+
+...
+
+[a1,a2,...,an,an,...,an]
+
+          [   2^k lần  ]
+
+Tức là ta có thể sinh ra 2^k mảng khác nhau có cùng hash nếu ta chọn n = 2^k + 1
+
+Nhận xét này sẽ giúp ta sinh ra được khá nhiều mảng
+
+Với n <= 2020, thì tốt nhất ta chọn n = 1024 + 1 = 1025 thì ta sẽ có 1024 mảng
+
+Để có đủ 2020 mảng, ta phải kết hợp với nhận xét 1
+
+Sol:
+
+Chọn n = 1025
+
+Ta có mảng data = [a1,a2,..,a1025]
+
+Thì ta sinh ra các mảng
+
+[a1,a2,...,a1025,a1025]
+
+[a1,a2,...,a1024] + [a1025] * 2
+
+[a1,a2,...,a1024] + [a1025] * 3
+
+...
+
+[a1,a2,...,a1024] + [a1025] * 1024
+
+[h(a1)+h(a2), h(a3) + h(a4),..., h(1025) + h(1025)]
+
+[h(a1)+h(a2), h(a3) + h(a4),...] + [h(1025) + h(1025)] * 2
+
+[h(a1)+h(a2), h(a3) + h(a4),...] + [h(1025) + h(1025)] * 3
+
+...
+
+[h(a1)+h(a2), h(a3) + h(a4),...] + [h(1025) + h(1025)] * 512
+
+[h(h(a1)+h(a2)) + h(h(a3)+h(a4)),..., h(h(1025) + h(1025)) + h(h(1025) + h(1025))]
+
+[h(h(a1)+h(a2)) + h(h(a3)+h(a4)),...] + [h(h(1025) + h(1025)) + h(h(1025) + h(1025))] * 2
+
+...
+
+...
+
+Tổng cộng ta có 1024+512+256+... > 2020
+
+=> Có flag

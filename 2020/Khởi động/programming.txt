@@ -1,0 +1,23 @@
+root@kali:~# nc 34.87.30.195 7331
+Good day. I'm the original God, the one created everything including you.
+In your language, it can be said that I'm a lover of symmetry.
+Currently, my secret gardens are full of boys and girls.
+All the gardens are beautiful, I would love to be able to take a photo to show you, but it's too cloudy...
+As I'm too tired, let's play a game.
+If you can uncover all the clouds, your wanted treasure is awaiting at the end of our conversation.
+Let's look at the first garden!
+This garden has the size of 3.
+ 'b' means that a boy is standing there.
+ 'g' means that a girl is standing there.
+ '?' means that it's cloudy, and there's a boy or a girl right there.
+You can ask me at most 9 questions, each in the format of "x1 y1 x2 y2",
+I'll tell you if one of the shortest paths from (x1,y1) to (x2,y2) including the 2 end points is symmetric.
+A path is symmetric if and only if it's the same as its reverse. For example: gbg, bggb, gbgbg, ggbbgg are symmetric.
+After exactly 9 questions, you have to tell me the boy/girl configuration in this garden, all rows combined as a single string.
+Let's go!
+ y123
+x+---
+1|b??
+2|?b?
+3|?bg
+?
