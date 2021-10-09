@@ -5,8 +5,8 @@
  | ------ | ------ | ------ | ------ |
  | [Simple For](#Simple-For) | Misc | 100 | `ASCIS{n3tw0rk_f0r3ns1c_1s_n0t_h4rd}` |
  | [Calculate me](#Calculate-me) | Misc | 100 | `ASCIS{3v3ry0n3_sh0uld_kn0w_pr0gramm1ng}` |
- | [CALL ME MAYBE](#CALL-ME-MAYBE | Crypto | 100 | `FLAG{SMS AND DMTF}` |
- | [Hitech Shop](#Hitech-Shop | Web | 100 | `ASCIS{SQL_1nJecTi0n_Ba5e_0N_OrdeR_bY}` |
+ | [CALL ME MAYBE](#CALL-ME-MAYBE) | Crypto | 100 | `FLAG{SMS AND DMTF}` |
+ | [Hitech Shop](#Hitech-Shop) | Web | 100 | `ASCIS{SQL_1nJecTi0n_Ba5e_0N_OrdeR_bY}` |
  
 # Simple For
  
@@ -110,7 +110,7 @@ Fuz thử với dấu `'` ta không thấy display ra lỗi. Vậy guess là web
 
 <img src=files/195305.png>
 
-Dùng sqlmap để exploit
+Dùng sqlmap để exploit.
 
 ```
 # sqlmap -u "http://125.235.240.166:20105/index?order=name" --dbs                  
