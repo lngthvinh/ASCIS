@@ -26,7 +26,7 @@
 
 <img src=files/191647.png>
 
-Follow TCP Stream
+* Follow TCP Stream
 
 <img src=files/191756.png>
 
@@ -38,11 +38,11 @@ Follow TCP Stream
  
 ### Solution
 
-Dùng netcat truy cập ta nhận được như sau. (timeout là 5s)
+* Dùng netcat truy cập ta nhận được như sau. (timeout là 5s)
 
 <img src=files/192943.png>
 
-Viết chương trình socket giao tiếp với server.
+* Viết chương trình socket giao tiếp với server.
 
 ```python
 # !/usr/bin/python
@@ -82,7 +82,7 @@ while True:
     print(data)
 ```
 
-Kết quả ta lấy được cờ.
+* Kết quả ta lấy được cờ.
 
 <img src=files/193213.png>
 
@@ -94,15 +94,15 @@ Kết quả ta lấy được cờ.
 
 ### Solution
 
-DTMF Code
+* DTMF Code
 
 <img src=files/194556.png>
 
-Phone (SMS)
+* Phone (SMS)
 
 <img src=files/194643.png>
 
-Cipher.txt > [DTMF Code](https://www.dcode.fr/dtmf-code) > 777767777026630368333 > [Multi-tap Phone (SMS)](https://www.dcode.fr/multitap-abc-cipher) > SMS AND DMTF
+* Cipher.txt > [DTMF Code](https://www.dcode.fr/dtmf-code) > 777767777026630368333 > [Multi-tap Phone (SMS)](https://www.dcode.fr/multitap-abc-cipher) > SMS AND DMTF
 
 # Hitech Shop
 
@@ -112,11 +112,11 @@ Cipher.txt > [DTMF Code](https://www.dcode.fr/dtmf-code) > 777767777026630368333
 
 ### Solution
 
-Fuz thử với dấu `'` ta không thấy display ra lỗi. Vậy guess là web server sử dụng hàm set_error_handler để catch lỗi.
+* Fuz thử với dấu `'` ta không thấy display ra lỗi. Vậy guess là web server sử dụng hàm set_error_handler để catch lỗi.
 
 <img src=files/195305.png>
 
-Dùng sqlmap để exploit.
+* Dùng sqlmap để exploit.
 
 ```
 # sqlmap -u "http://125.235.240.166:20105/index?order=name" --dbs                  
