@@ -10,7 +10,7 @@
  | echo server | Pwnable | 100 |  |
  | Guessme | Pwnable | 200 |  |
  | Keygen me | Reverse | 100 |  |
- | Decrypt me | Reverse | 200 |  |
+ | [Decrypt me](#Decrypt-me) | Reverse | 200 |  |
  | [Simple For](#Simple-For) | Misc | 100 | `ASCIS{n3tw0rk_f0r3ns1c_1s_n0t_h4rd}` |
  | [Calculate me](#Calculate-me) | Misc | 100 | `ASCIS{3v3ry0n3_sh0uld_kn0w_pr0gramm1ng}` |
  
@@ -145,4 +145,65 @@ Table: flag
 +---------------------------------------+
 ...
 ```
+
+# Decrypt me 
+
+*(Solution này của anh Nguyên nhóm mình viết lại và share cho mình. Tks anh Nguyên 🤗.)*
+
+### Challenge
+
+<img src=files/151202.png> 
+
+<img src=files/151256.png>
+
+Thực kiểm kiểm tra thông tin file ta thấy file PE – 32bit và được đóng gói (pack) bởi UPX.
+
+<img src=files/151621.png>
+
+Tiến hành Unpack file.
+
+<img src=files/151731.png>
+
+Gặp lỗi trong quá trình Unpack nên thực hiện unpack thủ công
+
+* Tìm giá trị OEP - Original Entry Point
+
+* Thực hiện các thao tác trong OllyDBG để tìm đc giá trị OEP (Chương trình sẽ bắt đầu thực thi ở đây)
+
+<img src=files/151956.png>
+
+* Jump đến địa chỉ thấy có 2 lệnh PUSHAD và POPAD, câu lệnh dùng để giải mã đoạn code thực thi của chương trình gốc, sau đó nó sẽ nhảy đến function DescryptM.00A713B9 -> DescryptM.00A713B9 là chương trình gốc mình cần phải xử lý
+
+<img src=files/152318.png>
+
+* Jump đến func DescryptM.00A713B9 (Chương trình gốc đã tìm thấy sau khi bị Pack) 
+
+<img src=files/152417.png>
+
+* Thực hiện dump dữ liệu ta sẽ có file code chính xác , đưa vào IDA để dễ xem code
+
+<img src=files/152501.png>
+
+* Sau khi đã có code ta thực hiện trace, thấy chương trình xử lý dữ liệu ở function 
+
+<img src=files/152617.png>
+
+* Sub_A71040 thực hiện việc lấy dữ liệu đầu vào, đưa nó vào một function Sub_A74B25 (function này sẽ trả về một giá trị dựa vào dữ liệu đầu vào) sau đó dữ liệu output của Sub_A74B25 sẽ được bỏ vào biến Var_1C và output dịch phải 8bit sẽ được bỏ vào Var_20
+
+<img src=files/152709.png>
+
+* 2 Biến Var_1C và Var_20 sẽ được bỏ vào loc_A710E9 để xử lý - Tóm gọn chương trình này cho 1 chuỗi đã bị mã hóa byte_A898B0 = [0x2c,0x62,0x2E,0x78,0x3E,0x4A,0x15,0x1,0x1f,0x62,0x0C,0x54,0x32,0x45,0x5D,0x6E]
+* Chạy vòng lặp từ 0 đến 1E, nếu là I số chẵn thì lấy Byte_A898B0[I] xor với Var_20 nếu là số lẻ thì lấy Byte_A898B0[I] xor với Var_1C
+
+<img src=files/152738.png>
+
+* Sau khi đã xor hết Byte_A898B0, 1E byte nó sẽ kiểm tra 5 kết quả xor đầu tiên có đúng là ASCIS không
+
+<img src=files/152824.png>
+
+* => Tìm được giá trị tại Var_1C = 0x31 và Var_20 = 0x6D, Thực hiện lại debug và gán cho Var_1C và Var_20 đúng giá trị 0x31 và 0x6D, chương trình sẽ thực hiện xor để lấy được flag
+
+<img src=files/152856.png>
+
+* (lưu ý: A xor B = B xor A)
 
