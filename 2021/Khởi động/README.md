@@ -10,7 +10,7 @@
  | echo server | Pwnable | 100 |  |
  | Guessme | Pwnable | 200 |  |
  | Keygen me | Reverse | 100 |  |
- | [Decrypt me](#Decrypt-me) | Reverse | 200 |  |
+ | [Decrypt me](#Decrypt-me) | Reverse | 200 | `ASCIS{x0r_me_t0_get_the_flag}` |
  | [Simple For](#Simple-For) | Misc | 100 | `ASCIS{n3tw0rk_f0r3ns1c_1s_n0t_h4rd}` |
  | [Calculate me](#Calculate-me) | Misc | 100 | `ASCIS{3v3ry0n3_sh0uld_kn0w_pr0gramm1ng}` |
  
