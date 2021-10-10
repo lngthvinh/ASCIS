@@ -156,6 +156,8 @@ Table: flag
 
 <img src=files/151256.png>
 
+### Solution
+
 Thực kiểm kiểm tra thông tin file ta thấy file PE – 32bit và được đóng gói (pack) bởi UPX.
 
 <img src=files/151621.png>
