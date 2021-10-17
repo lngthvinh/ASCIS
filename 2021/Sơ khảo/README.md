@@ -30,7 +30,7 @@
  
 ### Challenge
  
-<img src=files/vcs.png>
+<img src=files/3.png>
 
 [vcs.png](files/vcs.png)
 
@@ -38,7 +38,7 @@
 
 * Ta nhận được file png.
 
-<img src=files/4.png>
+<img src=files/vcs.png>
 
 * Vậy cờ nằm ở phần còn lại của bức hình. Sử dụng công cụ [TweakPNG](http://entropymine.com/jason/tweakpng/) để thay đổi size hình.
 
