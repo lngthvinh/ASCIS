@@ -26,13 +26,13 @@
 
 <img src=files/2.png>
 
-# Hello world
+# PNG
  
 ### Challenge
  
-<img src=files/1.png>
+<img src=files/3.png>
 
-[vcs.png](files/3.png)
+[vcs.png](files/vcs.png)
 
 ### Solution
 
