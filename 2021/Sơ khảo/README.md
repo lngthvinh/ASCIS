@@ -22,8 +22,6 @@
  
 ### Solution
 
-<img src=files/191647.png>
-
 * Tìm trong source của trang web.
 
 <img src=files/2.png>
