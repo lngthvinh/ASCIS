@@ -325,7 +325,7 @@ Database name is: ssalchtiwesmihcueymor
 
 * Đăng ký tài khoản và login, vào page proxy ta được input sau.
 
-<img src=files/14.png>
+<img src=files/15.png>
 
 * Nhập vào một vài URL, page chuyển hướng đến URL mà ta nhập. Ở đây guess là các yêu cầu phía máy chủ được sử dụng để tìm nạp tài nguyên và đưa nó vào ứng dụng web.
 
