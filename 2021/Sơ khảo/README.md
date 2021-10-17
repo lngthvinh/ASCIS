@@ -61,9 +61,10 @@
 <img src=files/8.png>
 
 * Viết chương trình tự động submit qr code.
+
 *(Code này của anh Hiếu team mình, anh Hiếu code python để đọc QR Code xịn lắm nghen 😆)
 
-```
+```python
 #!/usr/bin/python3
 from PIL import Image, ImageFont, ImageDraw
 from pyzbar.pyzbar import decode
