@@ -6,7 +6,7 @@
  | [Hello world](#Hello-world) | MISC | 100 | `ASCIS{th1$_1$_4_fl4g}` |
  | [PNG](#PNG) | MISC | 100 | `ASCIS{png_h1dd3n_d4t4}` |
  | [travel paper](#travel-paper) | MISC | 100 | `ASCIS{c0r0n4_v1rus_1s_g0n3}` |
- | [Sherlock Homes](#) | MISC | 451 |  |
+ | Sherlock Homes | MISC | 451 |  |
  | echo server | Pwnable | 100 |  |
  | Guessme | Pwnable | 200 |  |
  | Keygen me | Reverse | 100 |  |
