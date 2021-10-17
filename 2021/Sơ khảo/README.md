@@ -347,7 +347,7 @@ Database name is: ssalchtiwesmihcueymor
 
 * View page-source ta thấy có phần debug
 
-<img src=files/18.png>
+<img src=files/19.png>
 
 * Mở debug và fuz.
 
