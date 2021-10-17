@@ -10,6 +10,9 @@
  | [FSM](#FSM) | RE | 100 |  |
  | [trace me](#trace-me) | RE | 139 |  |
  | [ghost reg](#ghost-reg) | RE | 436 |  |
+ | [script kiddie](#script-kiddie) | WEB | 100 |  |
+ | [script kiddie](#script-kiddie) | WEB | 100 |  |
+ | [script kiddie](#script-kiddie) | WEB | 100 |  |
  
 # Hello world
  
@@ -198,6 +201,27 @@ while('ASCIS{' not in banner):
 
 [re01.zip](files/re01.zip)
 
+# script kiddie
+ 
+### Challenge
+ 
+<img src=files/10.png>
+
+### Solution
+
+* Truy cập trang ta được nội dung sau.
+
+<img src=files/11.png>
+
+* Dùng sqlmap để dump database.
+
+<img src=files/12.png>
+
+* Kết quả là không dump được nhưng ta có được payload sau để inject.
+
+`sort=(SELECT (CASE WHEN (8704=8704) THEN 'name' ELSE (SELECT 3137 UNION SELECT 5500) END))`
+
+Suwr
 
 
 
