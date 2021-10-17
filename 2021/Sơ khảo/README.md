@@ -65,8 +65,8 @@
 *(Code này của anh Hiếu team mình, anh Hiếu code python để đọc QR Code xịn lắm nghen 😆)*
 
 * Code bạn đọc tham khảo có thể lấy ở đây:
-* [qrcode_solve.py](file/qrcode_solve.py)
-* [clacon.ttf](file/clacon.ttf)
+ * [qrcode_solve.py](file/qrcode_solve.py)
+ * [clacon.ttf](file/clacon.ttf)
 
 ```python
 #!/usr/bin/python3
