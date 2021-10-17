@@ -30,7 +30,7 @@
  
 ### Challenge
  
-<img src=files/3.png>
+<img src=files/vcs.png>
 
 [vcs.png](files/vcs.png)
 
