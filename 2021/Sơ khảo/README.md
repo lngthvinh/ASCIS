@@ -6,7 +6,10 @@
  | [Hello world](#Hello-world) | MISC | 100 | `ASCIS{th1$_1$_4_fl4g}` |
  | [PNG](#PNG) | MISC | 100 | `ASCIS{png_h1dd3n_d4t4}` |
  | [travel paper](#travel-paper) | MISC | 100 | `ASCIS{c0r0n4_v1rus_1s_g0n3}` |
- | Sherlock Homes | MISC | 451 |  |
+ | [Sherlock Homes](#Sherlock-Homes) | MISC | 451 | `Chưa tìm được` |
+ | [FSM](#FSM) | RE | 100 |  |
+ | [trace me](#trace-me) | RE | 139 |  |
+ | [ghost reg](#ghost-reg) | RE | 436 |  |
  
 # Hello world
  
@@ -163,7 +166,37 @@ while('ASCIS{' not in banner):
 
 <img src=files/b.png>
 
+* Dùng lệnh `grep` để tìm file có chứa cờ.
 
+<img src=files/c.png>
+
+* Đọc file ta được thông tin sau: `D:\Work\CONFIDENTAL\ProjectX\2021\SECRET\ASCIS{NTF$_!S_G00D}.txt`
+
+* Submit cờ thì không được. Đến đây thì chưa tìm được hướng giải.
+
+# FSM
+ 
+### Challenge
+ 
+<img src=files/d.png>
+
+[fsm_B6CB40CE8F1E1C0B71B376A259F42C8F.exe](files/fsm_B6CB40CE8F1E1C0B71B376A259F42C8F.exe)
+
+# trace me
+ 
+### Challenge
+ 
+<img src=files/e.png>
+
+[re02.zip](files/re02.zip)
+
+# ghost reg
+ 
+### Challenge
+ 
+<img src=files/f.png>
+
+[re01.zip](files/re01.zip)
 
 
 
