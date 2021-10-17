@@ -62,7 +62,7 @@
 
 * Viết chương trình tự động submit qr code.
 
-*(Code này của anh Hiếu team mình, anh Hiếu code python để đọc QR Code xịn lắm nghen 😆)
+*(Code này của anh Hiếu team mình, anh Hiếu code python để đọc QR Code xịn lắm nghen 😆)*
 
 ```python
 #!/usr/bin/python3
