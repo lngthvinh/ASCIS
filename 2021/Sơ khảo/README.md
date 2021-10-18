@@ -11,7 +11,7 @@
  | [trace me](#trace-me) | RE | 139 |  |
  | [ghost reg](#ghost-reg) | RE | 436 |  |
  | [script kiddie](#script-kiddie) | WEB | 100 | `ASCIS{ssalchtiwesmihcueymor}` |
- | [OProxy](#OProxy) | WEB | 400 | ASCIS{SSRF_M3mcached_inj3cti0n} |
+ | [OProxy](#OProxy) | WEB | 400 | `ASCIS{SSRF_M3mcached_inj3cti0n}` |
  | [isolate](#isolate) | WEB | 475 |  |
  
 # Hello world
@@ -452,4 +452,12 @@ def create_flag():
 * Ta có được cờ
 
 <img src=files/1c.png>
+
+* Ngoài ra, khi đọc file `/etc/passwd` có đề cập đến Memcached.
+
+<img src=files/1d.png>
+
+* Do đó cờ cũng nằm ở thư mục `/proc/self/cwd/flag.txt` 
+
+*(Thông tin này mình có được từ writeup của bạn [KietNA-HPT/SVATTT-2021](https://github.com/KietNA-HPT/SVATTT-2021))*
 
