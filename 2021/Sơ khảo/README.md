@@ -384,7 +384,7 @@ with open("flag.jpg", "wb") as f:
 
 <img src=files/1b.png>
 
-* Xem một hồi thì thấy file này /app/app/__init__.py
+* Xem một hồi thì thấy file này `/app/app/__init__.py`
 
 ```python
 import os
@@ -447,7 +447,7 @@ def create_flag():
             db.engine.execute(sql)
 ```
 
-* Ta thấy chương trình mở 1 file flag.txt. Vậy truy cập vào /app/flag.txt
+* Ta thấy chương trình mở 1 file flag.txt. Vậy truy cập vào `/app/flag.txt`
 
 * Ta có được cờ
 
