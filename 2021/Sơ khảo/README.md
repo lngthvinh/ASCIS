@@ -386,7 +386,7 @@ with open("flag.jpg", "wb") as f:
 
 * Xem một hồi thì thấy file này /app/app/__init__.py
 
-```
+```python
 import os
 
 from flask import Flask
