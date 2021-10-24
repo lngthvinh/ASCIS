@@ -453,11 +453,7 @@ def create_flag():
 
 <img src=files/1c.png>
 
-* Ngoài ra, khi đọc file `/etc/passwd` có đề cập đến Memcached.
-
-<img src=files/1d.png>
-
-* Do đó cờ cũng nằm ở thư mục `/proc/self/cwd/flag.txt` 
+* Ngoài ra, nếu không xác đinh được thư mục ta có thể dùng `/proc/self/cwd/flag.txt`. Vì /proc/self/cwd liên kết đến thư mục làm việc hiện tại.
 
 *(Thông tin này mình có được từ writeup của bạn [KietNA-HPT/SVATTT-2021](https://github.com/KietNA-HPT/SVATTT-2021))*
 
